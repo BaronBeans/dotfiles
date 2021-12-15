@@ -35,6 +35,11 @@ set splitbelow
 
 set mouse=a
 
+set statusline=
+set statusline+=\ %F
+set statusline+=%= "Shift over to the right
+set statusline+=\ %c:%l:%L
+set statusline+=\ %n
 
 call plug#begin()
 
