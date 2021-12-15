@@ -68,6 +68,21 @@ Plug 'mbbill/undotree'
 
 call plug#end()
 
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+nnoremap <C-\> <C-W>v
+nnoremap <C-s> <C-W>s
+nnoremap <C-x> <C-W>q
+
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
 nnoremap <C-f> :Files<CR>
 nnoremap <C-g> :GFiles<CR>
@@ -115,6 +130,7 @@ endfunction
 
 
 colorscheme gruvbox
+set background=dark
 
 if executable('rg')
     let g:rg_derive_root='true'
