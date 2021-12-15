@@ -65,6 +65,7 @@ call plug#end()
 
 
 nnoremap <C-f> :Files<CR>
+nnoremap <C-g> :GFiles<CR>
 " nnoremap <C-F> :GFiles?<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -113,4 +114,10 @@ colorscheme gruvbox
 if executable('rg')
     let g:rg_derive_root='true'
 endif
+
+let mapleader=" "
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
