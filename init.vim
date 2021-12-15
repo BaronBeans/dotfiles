@@ -1,40 +1,50 @@
 syntax enable
 
-set hidden " allow multiple buffers to be open and editing
-set noswapfile
+set hidden
 
 set number
 set relativenumber
-set autochdir
-" set mouse=a
-set autoindent
-set noerrorbells visualbell t_vb=
+
 set ignorecase
+set smartcase
+set incsearch
+set nohls
 set showcmd
-set hlsearch
-set splitright
-set splitbelow
+set cmdheight=2
 
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2 " Number of spaces a tab counts when editing
-set expandtab"
+set expandtab
+set smarttab
+set autoindent
 
+set lazyredraw
+
+set noeb
+
+set noswapfile
 set nobackup
 set nowritebackup
+set undodir=~/.config/nvim/undodir
+set undofile
+set autochdir
 
-" set updatetime=300
-set cmdheight=2
+set splitright
+set splitbelow
+
+set mouse=a
 
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
+
+" Plug 'neovim/nvim-lspconfig'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'styled-components/vim-styled-components'
-Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -48,6 +58,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 
 call plug#end()
+
 
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTree<CR>
