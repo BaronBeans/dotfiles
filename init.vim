@@ -60,7 +60,9 @@ Plug 'alvan/vim-closetag'
 call plug#end()
 
 
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-f> :Files<CR>
+" nnoremap <C-F> :GFiles?<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
