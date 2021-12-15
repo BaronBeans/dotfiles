@@ -12,9 +12,9 @@ set nohls
 set showcmd
 set cmdheight=2
 
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2 " Number of spaces a tab counts when editing
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4 " Number of spaces a tab counts when editing
 set expandtab
 set smarttab
 set autoindent
@@ -40,6 +40,8 @@ call plug#begin()
 
 " Plug 'neovim/nvim-lspconfig'
 
+Plug 'morhetz/gruvbox'
+Plug 'jremmen/vim-ripgrep'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
@@ -56,6 +58,8 @@ Plug 'tpope/vim-surround'
 Plug 'neoclide/coc-pairs'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'vim-utils/vim-man'
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -102,3 +106,11 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+
+colorscheme gruvbox
+
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
