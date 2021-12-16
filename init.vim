@@ -87,6 +87,8 @@ set statusline+=\ %c:%l:%L
 set statusline+=\ %n
 set statusline+=\ %{LinterStatus()}
 
+let mapleader=" "
+
 " escape the terminal hell
 tnoremap <Esc> <C-\><C-n>
 tnoremap jk  <C-\><C-n>
@@ -139,10 +141,22 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+nnoremap <silent> ga :<C-u>CocList diagnostics<cr>
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ga  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>g  <Plug>(coc-fix-current)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -164,7 +178,6 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
-let mapleader=" "
 
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " vmap <leader>f  <Plug>(coc-format-selected)
@@ -197,3 +210,11 @@ let g:prettier#autoformat = 1
 
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-git']
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
