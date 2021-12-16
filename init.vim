@@ -21,6 +21,7 @@ set smarttab
 set autoindent
 
 set lazyredraw
+set scrolloff=15
 
 set noeb
 
@@ -96,7 +97,8 @@ set statusline+=\ %n
 set statusline+=\ %{LinterStatus()}
 
 " escape the terminal hell
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+tnoremap jk  <C-\><C-n>
 
 " press jk to exit insert mode
 inoremap jk <ESC>
@@ -201,3 +203,6 @@ let mapleader=" "
 
 let g:prettier#exec_cmd_path = "~/.nvm/versions/node/v14.17.6/bin/prettier"
 let g:prettier#autoformat = 1
+
+
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-git']
