@@ -11,7 +11,7 @@ set smartcase
 set incsearch
 set nohls
 set showcmd
-set cmdheight=2
+set cmdheight=1
 "
 set shiftwidth=4
 set tabstop=4
@@ -38,13 +38,15 @@ set splitbelow
 set mouse=a
 
 call plug#begin()
-" colour scheme
+" colour scheme / statusbars
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-pairs'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround' " ysw / ysiw etc - ) for no space ( for spaces )
 Plug 'alvan/vim-closetag'
 " Plug 'neovim/nvim-lspconfig'
 " git
@@ -63,6 +65,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
+Plug 'majutsushi/tagbar'
 " others
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
@@ -79,13 +82,13 @@ function! LinterStatus() abort
     \)
 endfunction
 
-set statusline=
-set statusline+=\ %m
-" set statusline+=\ %f
-set statusline+=%= "Shift over to the right
-set statusline+=\ %c:%l:%L
-set statusline+=\ %n
-set statusline+=\ %{LinterStatus()}
+" set statusline=
+" set statusline+=\ %m
+" " set statusline+=\ %f
+" set statusline+=%= "Shift over to the right
+" set statusline+=\ %c:%l:%L
+" set statusline+=\ %n
+" set statusline+=\ %{LinterStatus()}
 
 let mapleader=" "
 
@@ -218,3 +221,7 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
+let g:tagbar_ctags_bin = "/usr/bin/ctags"
+nmap <F8> :TagbarToggle<CR>
+
+let g:airline_theme='wombat'
