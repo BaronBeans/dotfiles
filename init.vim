@@ -65,6 +65,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -142,3 +143,24 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+let g:ale_linters_explicit = 1
+let g:ale_linters= {
+\   'javascript': ['prettier', 'eslint', 'stylelint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'jsx': ['stylelint', 'eslint'],
+\}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'jsx': ['prettier'],
+\   'typescript': ['prettier'],
+\}
+
+let g:ale_fix_on_save = 1
