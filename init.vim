@@ -13,9 +13,9 @@ set nohls
 set showcmd
 set cmdheight=1
 "
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4 " Number of spaces a tab counts when editing
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2 " Number of spaces a tab counts when editing
 set expandtab
 set smarttab
 set autoindent
@@ -82,14 +82,6 @@ function! LinterStatus() abort
     \)
 endfunction
 
-" set statusline=
-" set statusline+=\ %m
-" " set statusline+=\ %f
-" set statusline+=%= "Shift over to the right
-" set statusline+=\ %c:%l:%L
-" set statusline+=\ %n
-" set statusline+=\ %{LinterStatus()}
-
 let mapleader=" "
 
 " escape the terminal hell
@@ -102,8 +94,8 @@ inoremap JK <ESC>
 
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Left> :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
 
 nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
@@ -119,10 +111,6 @@ xnoremap J :move '>+1<CR>gv-gv
 nnoremap <C-f> :Files<CR>
 nnoremap <C-g> :GFiles<CR>
 nnoremap <C-m> :GFiles?<CR>
-" nnoremap <C-F> :GFiles?<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -173,6 +161,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+nnoremap <leader>r :Rg
+nnoremap <leader>s :%s/
 
 colorscheme gruvbox
 set background=dark
@@ -182,35 +172,8 @@ if executable('rg')
 endif
 
 
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" vmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-
-
-" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
-" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" let g:ale_linters_explicit = 1
-" let g:ale_linters= {
-" \   'javascript': ['prettier', 'eslint', 'stylelint'],
-" \   'typescript': ['prettier', 'eslint'],
-" \   'jsx': ['stylelint', 'eslint'],
-" \}
-
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['prettier'],
-" \   'jsx': ['prettier'],
-" \   'typescript': ['prettier'],
-" \}
-
-" let g:ale_fix_on_save = 1
-
 let g:prettier#exec_cmd_path = "~/.nvm/versions/node/v14.17.6/bin/prettier"
 let g:prettier#autoformat = 1
-
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-git']
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
