@@ -42,6 +42,7 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'glepnir/dashboard-nvim'
 " completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-pairs'
@@ -51,7 +52,7 @@ Plug 'alvan/vim-closetag'
 " Plug 'neovim/nvim-lspconfig'
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary' " gcc / gc to comment/uncomment line/block
 Plug 'airblade/vim-gitgutter'
 " syntax highlighting
 Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -65,7 +66,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
-Plug 'majutsushi/tagbar'
 " others
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
@@ -221,7 +221,6 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
-let g:tagbar_ctags_bin = "/usr/bin/ctags"
-nmap <F8> :TagbarToggle<CR>
-
 let g:airline_theme='wombat'
+
+let g:dashboard_default_executive = 'fzf'
