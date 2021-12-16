@@ -35,39 +35,68 @@ set splitbelow
 
 set mouse=a
 
+call plug#begin()
+
+" colour scheme
+Plug 'morhetz/gruvbox'
+
+" completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-pairs'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+" Plug 'neovim/nvim-lspconfig'
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+
+" syntax highlighting
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'styled-components/vim-styled-components'
+
+Plug 'dense-analysis/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'branch': 'release/0.x' }
+
+" searching
+Plug 'jremmen/vim-ripgrep'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
+
+" others
+Plug 'vim-utils/vim-man'
+Plug 'mbbill/undotree'
+
+call plug#end()
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 set statusline=
 set statusline+=\ %F
 set statusline+=%= "Shift over to the right
 set statusline+=\ %c:%l:%L
 set statusline+=\ %n
+set statusline+=\ %{LinterStatus()}
 
-call plug#begin()
-
-" Plug 'neovim/nvim-lspconfig'
-
-Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'styled-components/vim-styled-components'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'branch': 'release/0.x' }
-Plug 'tpope/vim-surround'
-Plug 'neoclide/coc-pairs'
-Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-Plug 'dense-analysis/ale'
-
-call plug#end()
+" press jk to exit insert mode
+inoremap jk <ESC>
+inoremap JK <ESC>
 
 nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
