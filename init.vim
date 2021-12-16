@@ -4,6 +4,7 @@ set hidden
 
 set number
 set relativenumber
+set cursorline
 
 set ignorecase
 set smartcase
@@ -94,6 +95,9 @@ set statusline+=\ %c:%l:%L
 set statusline+=\ %n
 set statusline+=\ %{LinterStatus()}
 
+" escape the terminal hell
+:tnoremap <Esc> <C-\><C-n>
+
 " press jk to exit insert mode
 inoremap jk <ESC>
 inoremap JK <ESC>
@@ -116,6 +120,7 @@ xnoremap J :move '>+1<CR>gv-gv
 
 nnoremap <C-f> :Files<CR>
 nnoremap <C-g> :GFiles<CR>
+nnoremap <C-m> :GFiles?<CR>
 " nnoremap <C-F> :GFiles?<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -168,28 +173,31 @@ endif
 
 let mapleader=" "
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
-let g:ale_linters_explicit = 1
-let g:ale_linters= {
-\   'javascript': ['prettier', 'eslint', 'stylelint'],
-\   'typescript': ['prettier', 'eslint'],
-\   'jsx': ['stylelint', 'eslint'],
-\}
+" let g:ale_linters_explicit = 1
+" let g:ale_linters= {
+" \   'javascript': ['prettier', 'eslint', 'stylelint'],
+" \   'typescript': ['prettier', 'eslint'],
+" \   'jsx': ['stylelint', 'eslint'],
+" \}
 
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
-\   'jsx': ['prettier'],
-\   'typescript': ['prettier'],
-\}
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['prettier'],
+" \   'jsx': ['prettier'],
+" \   'typescript': ['prettier'],
+" \}
 
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
+
+let g:prettier#exec_cmd_path = "~/.nvm/versions/node/v14.17.6/bin/prettier"
+let g:prettier#autoformat = 1
