@@ -1,47 +1,45 @@
 syntax enable
 
 set hidden
-
+"
 set number
 set relativenumber
 set cursorline
-
+"
 set ignorecase
 set smartcase
 set incsearch
 set nohls
 set showcmd
 set cmdheight=2
-
+"
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4 " Number of spaces a tab counts when editing
 set expandtab
 set smarttab
 set autoindent
-
+"
 set lazyredraw
 set scrolloff=15
-
+"
 set noeb
-
+"
 set noswapfile
 set nobackup
 set nowritebackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set autochdir
-
+"
 set splitright
 set splitbelow
-
+"
 set mouse=a
 
 call plug#begin()
-
 " colour scheme
 Plug 'morhetz/gruvbox'
-
 " completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-pairs'
@@ -49,39 +47,31 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 " Plug 'neovim/nvim-lspconfig'
-
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
-
 " syntax highlighting
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'styled-components/vim-styled-components'
-
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'branch': 'release/0.x' }
-
 " searching
 Plug 'jremmen/vim-ripgrep'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
-
 " others
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
-
 call plug#end()
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
-
     let l:all_errors = l:counts.error + l:counts.style_error
     let l:all_non_errors = l:counts.total - l:all_errors
-
     return l:counts.total == 0 ? 'OK' : printf(
     \   '%dW %dE',
     \   all_non_errors,
@@ -90,7 +80,8 @@ function! LinterStatus() abort
 endfunction
 
 set statusline=
-set statusline+=\ %F
+set statusline+=\ %m
+" set statusline+=\ %f
 set statusline+=%= "Shift over to the right
 set statusline+=\ %c:%l:%L
 set statusline+=\ %n
