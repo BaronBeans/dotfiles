@@ -66,6 +66,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'mhartington/formatter.nvim'
+
 " Plug 'mattn/emmet-vim'
 " Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 
@@ -225,4 +227,31 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+require('formatter').setup({
+  filetype = {
+    javascript = {
+      -- prettier
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+          stdin = true
+        }
+      end
+    },
+    typescript = {
+      -- prettier
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+          stdin = true
+        }
+      end
+    },
+
+  }
+})
 EOF
+
+nnoremap <silent> <leader>p :Format<CR>
