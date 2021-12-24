@@ -1,26 +1,15 @@
 # my dotfiles repo
 
+Most of the nvim config comes from lunarvim (https://github.com/LunarVim/Neovim-from-scratch)
+
 ## mappings:
 
-- tmux.conf => ~/.tmux.conf
-- init.vim => ~/.config/nvim/init.vim
-
-
-## todo / wishlist:
-* treesitter (syntax highlighting)
-* lspconfig in nvim
-* telescope
-
-
-## my fave shortcuts:
-
-### vim
-* gt and gT to :tabn and :tabp
-* :tab ball to open all current buffers in their own tabs
-* <C-s> split vertical
-* <C-\> split horizontal
+* tmux.conf => ~/.tmux.conf
+* init.lua => ~/.config/nvim/init.lua
+* lua => ~/.config/nvim/lua
 
 ### tmux
+
 * <prefix> c - create new window
 * <prefix> n - next window
 * <prefix> p - previous window
