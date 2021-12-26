@@ -38,8 +38,9 @@ local options = {
     swapfile = false,
     backup = false,
     writebackup = false,
-    undodir = "~/.config/nvim/undodir",
-    undofile = true,
+    -- undodir = "~/.config/nvim/undodir",
+    -- undofile = true,
+    autochdir = true,
     --
     splitright = true,
     splitbelow = true,
