@@ -11,10 +11,11 @@ dashboard.section.header.val = {[[  _____ _____  ___   _   _ _ _____   _____ ___
                                 [[ /\__/ / |___| | | || |\  | /\__/ / | \__/\ \_/ / |/ /| |___ ]],
                                 [[ \____/\____/\_| |_/\_| \_/ \____/   \____/\___/|___/ \____/ ]]}
 dashboard.section.buttons.val = {dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-                                 dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+                                 dashboard.button("g", "  Git files", ":Telescope git_status <CR>"),
+                                 dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
                                  dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
                                  dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-                                 dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+                                 dashboard.button("s", "  Find text", ":Telescope live_grep <CR>"),
                                  dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
                                  dashboard.button("q", "  Quit Neovim", ":qa<CR>")}
 

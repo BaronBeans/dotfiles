@@ -40,7 +40,7 @@ local options = {
     writebackup = false,
     -- undodir = "~/.config/nvim/undodir",
     -- undofile = true,
-    autochdir = true,
+    -- autochdir = true,
     --
     splitright = true,
     splitbelow = true,
