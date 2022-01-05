@@ -1,0 +1,5 @@
+alias src='cd ~/code/'
+alias code='code-insiders .'
+alias gk='gitkraken'
+alias v='nvim'
+alias vim='nvim'
