@@ -10,21 +10,18 @@ dashboard.section.header.val = {[[  _____ _____  ___   _   _ _ _____   _____ ___
                                 [[  `--. \  __||  _  || . ` |  `--. \ | |   | | | | | | |  __| ]],
                                 [[ /\__/ / |___| | | || |\  | /\__/ / | \__/\ \_/ / |/ /| |___ ]],
                                 [[ \____/\____/\_| |_/\_| \_/ \____/   \____/\___/|___/ \____/ ]]}
+
 dashboard.section.buttons.val = {dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
                                  dashboard.button("g", "  Git files", ":Telescope git_status <CR>"),
                                  dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
                                  dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
                                  dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
                                  dashboard.button("s", "  Find text", ":Telescope live_grep <CR>"),
+                                 dashboard.button("t", "  Terminal", ":ToggleTerm direction=float<cr>"),
                                  dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
                                  dashboard.button("q", "  Quit Neovim", ":qa<CR>")}
 
 local function footer()
-    -- NOTE: requires the fortune-mod package to work
-    -- local handle = io.popen("fortune")
-    -- local fortune = handle:read("*a")
-    -- handle:close()
-    -- return fortune
     return "https://seanbarnard.dev"
 end
 
@@ -35,5 +32,4 @@ dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
 
 dashboard.opts.opts.noautocmd = true
--- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 alpha.setup(dashboard.opts)
