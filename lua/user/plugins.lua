@@ -52,11 +52,11 @@ return packer.startup(function(use)
     use "goolord/alpha-nvim" -- A fast and fully customizable greeter for neovim
     use "folke/which-key.nvim" -- Displays a popup with all possible key bindings
 
-
     use "numToStr/Comment.nvim" -- Easily comment stuff
     use "JoosepAlviste/nvim-ts-context-commentstring" -- needed for the above
 
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+    use "windwp/nvim-ts-autotag" -- Use treesitter to autoclose and autorename html tag
 
     -- use "kyazdani42/nvim-web-devicons"
 
@@ -95,11 +95,13 @@ return packer.startup(function(use)
 
     -- Git
     use "lewis6991/gitsigns.nvim"
+    use 'tpope/vim-fugitive' -- Fugitive is the premier Vim plugin for Git
     -- use 'airblade/vim-gitgutter' -- Shows a git diff in the sign column
-    -- use 'tpope/vim-fugitive' -- Fugitive is the premier Vim plugin for Git
+    use "tanvirtin/vgit.nvim"
+    use "kdheepak/lazygit.nvim"
 
 
-    -- use 'tpope/vim-surround' -- ysw / ysiw etc - ) for no space ( for spaces )
+    use 'tpope/vim-surround' -- ysw / ysiw etc - ) for no space ( for spaces )
     -- use 'alvan/vim-closetag'
 
 
