@@ -96,7 +96,7 @@ return packer.startup(function(use)
     -- Git
     use "lewis6991/gitsigns.nvim"
     use 'tpope/vim-fugitive' -- Fugitive is the premier Vim plugin for Git
-    -- use 'airblade/vim-gitgutter' -- Shows a git diff in the sign column
+    use 'airblade/vim-gitgutter' -- Shows a git diff in the sign column
     use "tanvirtin/vgit.nvim"
     use "kdheepak/lazygit.nvim"
 
