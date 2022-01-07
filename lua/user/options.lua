@@ -8,40 +8,30 @@ local options = {
     timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
     updatetime = 300, -- faster completion (4000ms default)
 
-    -- mine:
-    --
     hidden = true,
-    --
     number = true,
     relativenumber = true,
     cursorline = true,
-    --
     ignorecase = true,
     smartcase = true,
     incsearch = true,
     hlsearch = false,
     showcmd = true,
     cmdheight = 2,
-    --
     shiftwidth = 2,
     tabstop = 2,
     softtabstop = 2,
     expandtab = true,
     smarttab = true,
     autoindent = true,
-    --
     lazyredraw = true,
     scrolloff = 15,
-    --
     eb = false,
-    --
     swapfile = false,
     backup = false,
     writebackup = false,
-    --
     splitright = true,
     splitbelow = true,
-    --
     mouse = "a"
 }
 

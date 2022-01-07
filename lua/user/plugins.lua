@@ -60,6 +60,8 @@ return packer.startup(function(use)
 
     use 'tpope/vim-surround' -- ysw / ysiw etc - ) for no space ( for spaces )
 
+    use 'petertriho/nvim-scrollbar' -- Extensible neovim scrollbar
+
     -- use "kyazdani42/nvim-web-devicons"
 
     -- Colorschemes

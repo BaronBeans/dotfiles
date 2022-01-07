@@ -72,7 +72,7 @@ end
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "dracula",
+        theme = "palenight",
         component_separators = {
             left = "",
             right = ""
