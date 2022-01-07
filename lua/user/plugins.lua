@@ -58,6 +58,8 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "windwp/nvim-ts-autotag" -- Use treesitter to autoclose and autorename html tag
 
+    use 'tpope/vim-surround' -- ysw / ysiw etc - ) for no space ( for spaces )
+
     -- use "kyazdani42/nvim-web-devicons"
 
     -- Colorschemes
@@ -97,13 +99,10 @@ return packer.startup(function(use)
     use "lewis6991/gitsigns.nvim"
     use 'tpope/vim-fugitive' -- Fugitive is the premier Vim plugin for Git
     use 'airblade/vim-gitgutter' -- Shows a git diff in the sign column
-    use "tanvirtin/vgit.nvim"
-    use "kdheepak/lazygit.nvim"
 
-
-    use 'tpope/vim-surround' -- ysw / ysiw etc - ) for no space ( for spaces )
-    -- use 'alvan/vim-closetag'
-
+    -- Testing
+    use "vim-test/vim-test"
+    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

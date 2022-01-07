@@ -22,7 +22,7 @@ dashboard.section.buttons.val = {dashboard.button("f", "  Find file", ":Teles
                                  dashboard.button("q", "  Quit Neovim", ":qa<CR>")}
 
 local function footer()
-    return "https://seanbarnard.dev"
+    return "https://seanbarnard.dev\nhttps://devhints.io\nhttps://lecoupa.github.io/awesome-cheatsheets\n\n\nhttp://localhost:1234\nhttp://localhost:3000\nhttp://localhost:3001\nhttp://localhost:5000"
 end
 
 dashboard.section.footer.val = footer()

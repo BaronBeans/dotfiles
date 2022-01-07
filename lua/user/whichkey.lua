@@ -147,8 +147,8 @@ local mappings = {
         S = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
         t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
         w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"},
-        W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"}
-        -- w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
+        W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"},
+        w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
     },
     s = {
         name = "Search",
@@ -171,7 +171,15 @@ local mappings = {
         f = {"<cmd>ToggleTerm direction=float<cr>", "Float"},
         h = {"<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal"},
         v = {"<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical"}
-    }
+    },
+
+    T = {
+      name = "Test",
+      n = {"<cmd>TestNearest<CR>", "Nearest"},
+      f = {"<cmd>TestFile<CR>", "File"},
+      a = {"<cmd>TestSuite<CR>", "All"},
+      l = {"<cmd>TestLast<CR>", "Last"}
+  }
 }
 
 which_key.setup(setup)
