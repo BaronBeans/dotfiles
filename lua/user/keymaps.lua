@@ -1,10 +1,10 @@
 local opts = {
-    noremap = true,
-    silent = true
+	noremap = true,
+	silent = true,
 }
 
 local term_opts = {
-    silent = true
+	silent = true,
 }
 
 -- Shorten function name
@@ -76,4 +76,3 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
