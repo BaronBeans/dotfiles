@@ -23,12 +23,17 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
 -- Better window navigation
+-- Normal --
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+-- Terminal --
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -48,11 +53,11 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("v", "jk", "<ESC>", opts)
+keymap("t", "jk", "<C-\\><C-n>", opts)
 
 -- Terminal --
 -- escape terminal hell
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
-keymap("t", "jk", "<C-\\><C-n>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -71,9 +76,3 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
