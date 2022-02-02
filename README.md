@@ -7,6 +7,8 @@ Most of the nvim config comes from lunarvim (https://github.com/LunarVim/Neovim-
 * tmux.conf => ~/.tmux.conf
 * init.lua => ~/.config/nvim/init.lua
 * lua => ~/.config/nvim/lua
+* bashrc => ~/.bashrc
+* bash_aliases => ~/.bash_aliases
 
 ### tmux
 
