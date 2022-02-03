@@ -171,7 +171,7 @@ local mappings = {
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		C = { "<cmd>Telescope command_history<cr>", "Command History" },
-		f = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find in File" },
+		f = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending <cr>", "Find in File" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		H = { "<cmd>Telescope highlights<cr>", "Highlights" },
 		j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
