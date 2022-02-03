@@ -168,6 +168,7 @@ local mappings = {
   },
 	s = {
 		name = "Search",
+		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		C = { "<cmd>Telescope command_history<cr>", "Command History" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
