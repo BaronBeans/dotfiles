@@ -67,6 +67,7 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- ysw / ysiw etc - ) for no space ( for spaces )
 
 	use("petertriho/nvim-scrollbar") -- Extensible neovim scrollbar
+  use("kevinhwang91/nvim-hlslens") -- Maybe stop an error
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		config = function()

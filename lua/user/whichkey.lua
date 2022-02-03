@@ -162,6 +162,10 @@ local mappings = {
 		-- W = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove workspace folder" },
 		w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
 	},
+  n = {
+    e = { "<cmd>Telescope find_files cwd=~/.config/nvim<cr>", "Neovim Config" },
+    c = { "<cmd>Telescope find_files cwd=~/.config<cr>", "~/.config" }
+  },
 	s = {
 		name = "Search",
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
