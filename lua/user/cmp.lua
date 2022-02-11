@@ -131,7 +131,6 @@ cmp.setup({
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	},
 	experimental = {
-		ghost_text = false,
-		native_menu = true,
+		ghost_text = true,
 	},
 })
