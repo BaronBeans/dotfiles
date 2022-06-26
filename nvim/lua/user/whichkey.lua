@@ -118,12 +118,14 @@ local mappings = {
 		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		c = { "<cmd>Git commit<cr>", "Git Commit" },
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+		f = { "<cmd>Git fetch<cr>", "Fetch" },
 		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		-- j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		-- k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 		-- P = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 		p = { "<cmd>Git push<cr>", "Git Push" },
+		P = { "<cmd>Git pull<cr>", "Git Pull" },
 		-- r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		-- R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 		s = { "<cmd>Telescope git_status<cr>", "Git Status" },
@@ -163,6 +165,7 @@ local mappings = {
 		w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
 	},
   n = {
+    a = { "<cmd>Telescope find_files cwd=~/.aws<cr>", "AWS Config" },
     e = { "<cmd>Telescope find_files cwd=~/.config/nvim<cr>", "Neovim Config" },
     c = { "<cmd>Telescope find_files cwd=~/.config<cr>", "~/.config" }
   },
