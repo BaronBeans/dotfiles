@@ -68,13 +68,13 @@ return packer.startup(function(use)
 
 	use("petertriho/nvim-scrollbar") -- Extensible neovim scrollbar
   use("kevinhwang91/nvim-hlslens") -- Maybe stop an error
-	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").register_lsp_virtual_lines()
-		end,
-		requires = { "folke/trouble.nvim" },
-	})
+	-- use({
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	config = function()
+	-- 		require("lsp_lines").register_lsp_virtual_lines()
+	-- 	end,
+	-- 	requires = { "folke/trouble.nvim" },
+	-- })
 
 	use "kyazdani42/nvim-web-devicons"
 
