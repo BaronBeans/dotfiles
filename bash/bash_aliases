@@ -5,3 +5,6 @@ alias zombies="ps axo stat,ppid,pid,comm | grep -w defunct"
 alias gk='gitkraken'
 alias v='nvim'
 alias vim='nvim'
+alias ex='explorer.exe .'
+alias update='sudo apt update && sudo apt -y upgrade'
+alias t='tmux new -s $(basename "$PWD")'
