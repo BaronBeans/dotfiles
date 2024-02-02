@@ -116,6 +116,17 @@ return packer.startup(function(use)
     use("vim-test/vim-test")
     -- use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
 
+
+    -- Copilot
+    -- use("github/copilot.vim")
+    use { "zbirenbaum/copilot.lua" }
+    use {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua" },
+      config = function ()
+        require("copilot_cmp").setup()
+      end
+    }
     
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

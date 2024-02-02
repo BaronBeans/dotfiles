@@ -40,6 +40,8 @@ local kind_icons = {
     Constant = "",
     Struct = "",
     Event = "",
+    COPILOT = "",
+    copilot = "",
     Operator = "",
     TypeParameter = ""
 }
@@ -97,6 +99,7 @@ cmp.setup({
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
+                copilot = "[COPILOT]",
                 luasnip = "[Snippet]",
                 nvim_lsp = "[LSP]",
                 buffer = "[Buffer]",
@@ -107,6 +110,8 @@ cmp.setup({
         end
     },
     sources = {{
+        name = "copilot"
+    }, {
         name = "luasnip"
     }, {
         name = "nvim_lsp"
