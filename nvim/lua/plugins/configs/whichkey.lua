@@ -96,6 +96,7 @@ local mappings = {
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	f = { "<cmd>Telescope find_files<cr>", "Find in file" },
 	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find in project" },
+  o = { "<cmd>Oil<cr>", "Oil" },
 	P = { "<cmd>Telescope projects<cr>", "Projects" },
 	p = { "<cmd>Lazy<cr>", "Lazy" },
 
@@ -103,6 +104,7 @@ local mappings = {
 		name = "Git",
 		a = { "<cmd>Git add .<cr>", "Git Add All" },
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Current Line Blame" },
 		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		c = { "<cmd>Git commit<cr>", "Git Commit" },
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
@@ -110,16 +112,17 @@ local mappings = {
 		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-		h = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+		L = { "<cmd>Git blame<cr>", "Blame" },
+		l = { "<cmd>Gitsigns blame_line<cr>", "Blame Line" },
+		h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
 		p = { "<cmd>Git push<cr>", "Git Push" },
 		P = { "<cmd>Git pull<cr>", "Git Pull" },
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+		r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
+		R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
 		s = { "<cmd>Telescope git_status<cr>", "Git Status" },
 		S = { "<cmd>Telescope git_stash<cr>", "Git Stash" },
-		t = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-		u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+		t = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
+		u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
 	},
 
 	l = {
@@ -146,12 +149,6 @@ local mappings = {
 		w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 	},
 
-	-- n = {
-	-- 	a = { "<cmd>Telescope find_files cwd=~/.aws<cr>", "AWS Config" },
-	-- 	e = { "<cmd>Telescope find_files cwd=~/.config/nvim<cr>", "Neovim Config" },
-	-- 	c = { "<cmd>Telescope find_files cwd=~/.config<cr>", "~/.config" },
-	-- },
-
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
@@ -172,18 +169,6 @@ local mappings = {
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 	},
-
-	-- t = {
-	-- 	name = "Terminal",
-	-- 	n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-	-- 	u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-	-- 	t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-	-- 	p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-	-- 	f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-	-- 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	-- 	r = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	-- },
 
 	t = {
 		name = "Test",
