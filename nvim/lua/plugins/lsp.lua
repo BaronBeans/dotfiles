@@ -68,6 +68,12 @@ return {
 
 		-- LSP servers to install (see list here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers )
 		local servers = {
+			azure_pipelines_ls = {},
+			bashls = {},
+			cssls = {},
+			dockerls = {},
+			emmet_ls = {},
+			gopls = {},
 			html = {},
 			jsonls = {},
 			lua_ls = {
@@ -80,9 +86,11 @@ return {
 			},
 			marksman = {},
 			pyright = {},
+			rust_analyzer = {},
 			tailwindcss = {
 				-- filetypes = { "reason" },
 			},
+			terraformls = {},
 			tsserver = {
 				settings = {
 					experimental = {

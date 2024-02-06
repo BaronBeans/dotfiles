@@ -92,5 +92,6 @@ return {
 
     -- use js snippets for ts
     require'luasnip'.filetype_extend("typescript", {"javascript"})
+    require'luasnip'.filetype_extend("typescriptreact", {"javascript"})
 	end,
 }
