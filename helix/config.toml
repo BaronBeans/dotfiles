@@ -1,5 +1,7 @@
 # theme = 'ayu_dark'
-theme = 'default'
+# theme = 'gruvbox_dark_hard'
+# theme = 'default'
+theme = 'boo-berry'
 
 [editor]
 mouse=true
@@ -19,7 +21,7 @@ enable=true
 
 [editor.statusline]
 left=["mode", "spinner", "version-control"]
-right=["diagnostics", "workspace-diagnostics", "file-name", "selections", "position", "file-encoding"]
+right=["file-name","diagnostics", "workspace-diagnostics", "selections", "position", "file-encoding"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -27,7 +29,7 @@ mode.select = "SELECT"
 
 [editor.lsp]
 display-messages=true
-display-inlay-hints=true
+display-inlay-hints=false
 snippets=true
 
 # At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
