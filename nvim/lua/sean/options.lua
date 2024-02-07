@@ -24,7 +24,6 @@ local options = {
 	expandtab = true,
 	smarttab = true,
 	autoindent = true,
-	lazyredraw = true,
 	scrolloff = 15,
 	eb = false,
 	swapfile = false,
