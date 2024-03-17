@@ -85,7 +85,6 @@ local opts = {
 }
 
 local mappings = {
-	a = { "<cmd>Alpha<cr>", "Alpha" },
 	b = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
@@ -94,10 +93,9 @@ local mappings = {
 	w = { "<cmd>w!<CR>", "Save" },
 	q = { "<cmd>q!<CR>", "Quit" },
 	x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	f = { "<cmd>Telescope find_files<cr>", "Find in file" },
+	f = { "<cmd>Telescope find_files<cr>", "Find file" },
 	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find in project" },
 	o = { "<cmd>Oil<cr>", "Oil" },
-	P = { "<cmd>Telescope projects<cr>", "Projects" },
 	p = { "<cmd>Lazy<cr>", "Lazy" },
 
 	c = {
@@ -114,28 +112,13 @@ local mappings = {
 
 	g = {
 		name = "Git",
-		a = { "<cmd>Git add .<cr>", "Git Add All" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Current Line Blame" },
-		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		c = { "<cmd>Git commit<cr>", "Git Commit" },
+		b = { "<cmd>Git blame<cr>", "Blame" },
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
-		f = { "<cmd>Git fetch<cr>", "Fetch" },
-		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-		g = { "<cmd>LazyGit<cr>", "LazyGit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		L = { "<cmd>Git blame<cr>", "Blame" },
 		l = { "<cmd>Gitsigns blame_line<cr>", "Blame Line" },
-		h = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
-		p = { "<cmd>Git push<cr>", "Git Push" },
-		P = { "<cmd>Git pull<cr>", "Git Pull" },
-		r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
-		R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
-		s = { "<cmd>Telescope git_status<cr>", "Git Status" },
-		S = { "<cmd>Telescope git_stash<cr>", "Git Stash" },
-		t = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
-		u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
+		p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+		t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Current Line Blame" },
 	},
 
 	l = {
