@@ -9,7 +9,12 @@ return {
 
 		"hrsh7th/cmp-nvim-lsp",
 		-- Install none-ls for diagnostics, code actions, and formatting
-		"nvimtools/none-ls.nvim",
+		{
+			"nvimtools/none-ls.nvim",
+			dependencies = {
+				"nvimtools/none-ls-extras.nvim",
+			},
+		},
 
 		-- Install neodev for better nvim configuration and plugin authoring via lsp configurations
 		"folke/neodev.nvim",
@@ -87,9 +92,7 @@ return {
 			marksman = {},
 			pyright = {},
 			rust_analyzer = {},
-			tailwindcss = {
-				-- filetypes = { "reason" },
-			},
+			tailwindcss = {},
 			terraformls = {},
 			tsserver = {
 				settings = {
@@ -152,8 +155,6 @@ return {
 
 		-- Congifure LSP linting, formatting, diagnostics, and code actions
 		local formatting = null_ls.builtins.formatting
-		local diagnostics = null_ls.builtins.diagnostics
-		local code_actions = null_ls.builtins.code_actions
 
 		null_ls.setup({
 			border = "rounded",
@@ -161,20 +162,8 @@ return {
 				-- formatting
 				formatting.prettierd,
 				formatting.stylua,
-
-				-- diagnostics
-				diagnostics.eslint_d.with({
-					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" })
-					end,
-				}),
-
-				-- code actions
-				code_actions.eslint_d.with({
-					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" })
-					end,
-				}),
+				require("none-ls.diagnostics.eslint"),
+				require("none-ls.code_actions.eslint"),
 			},
 		})
 
