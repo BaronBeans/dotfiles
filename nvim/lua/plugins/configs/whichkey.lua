@@ -93,6 +93,7 @@ local mappings = {
 	w = { "<cmd>w!<CR>", "Save" },
 	q = { "<cmd>q!<CR>", "Quit" },
 	x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	X = { "<cmd>bufdo! bw<CR>", "Close All Buffers" },
 	f = { "<cmd>Telescope find_files<cr>", "Find file" },
 	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find in project" },
 	o = { "<cmd>Oil<cr>", "Oil" },
