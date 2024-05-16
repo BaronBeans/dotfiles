@@ -35,6 +35,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$PATH
 export PATH=$GOBIN:$PATH
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+export DISPLAY=$(display):0
