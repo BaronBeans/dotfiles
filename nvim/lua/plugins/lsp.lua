@@ -101,7 +101,7 @@ return {
 				},
 			},
 			yamlls = {},
-            zls = {},
+			zls = {},
 		}
 
 		-- Default handlers for LSP
