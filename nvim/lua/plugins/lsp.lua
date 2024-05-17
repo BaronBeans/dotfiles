@@ -75,11 +75,8 @@ return {
 		local servers = {
 			azure_pipelines_ls = {},
 			bashls = {},
-			cssls = {},
 			dockerls = {},
-			emmet_ls = {},
 			gopls = {},
-			html = {},
 			jsonls = {},
 			lua_ls = {
 				settings = {
@@ -92,7 +89,6 @@ return {
 			marksman = {},
 			pyright = {},
 			rust_analyzer = {},
-			tailwindcss = {},
 			terraformls = {},
 			tsserver = {
 				settings = {
@@ -105,6 +101,7 @@ return {
 				},
 			},
 			yamlls = {},
+            zls = {},
 		}
 
 		-- Default handlers for LSP
