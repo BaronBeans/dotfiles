@@ -41,35 +41,35 @@ return {
 			automatic_installation = { exclude = { "ocamllsp", "gleam" } },
 		})
 
-		-- Override tsserver diagnostics to filter out specific messages
-		local messages_to_filter = {
-			"This may be converted to an async function.",
-			"'_Assertion' is declared but never used.",
-			"'__Assertion' is declared but never used.",
-			"The signature '(data: string): string' of 'atob' is deprecated.",
-			"The signature '(data: string): string' of 'btoa' is deprecated.",
-		}
+		-- -- Override tsserver diagnostics to filter out specific messages
+		-- local messages_to_filter = {
+		-- 	"This may be converted to an async function.",
+		-- 	"'_Assertion' is declared but never used.",
+		-- 	"'__Assertion' is declared but never used.",
+		-- 	"The signature '(data: string): string' of 'atob' is deprecated.",
+		-- 	"The signature '(data: string): string' of 'btoa' is deprecated.",
+		-- }
 
-		local function tsserver_on_publish_diagnostics_override(_, result, ctx, config)
-			local filtered_diagnostics = {}
-
-			for _, diagnostic in ipairs(result.diagnostics) do
-				local found = false
-				for _, message in ipairs(messages_to_filter) do
-					if diagnostic.message == message then
-						found = true
-						break
-					end
-				end
-				if not found then
-					table.insert(filtered_diagnostics, diagnostic)
-				end
-			end
-
-			result.diagnostics = filtered_diagnostics
-
-			vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
-		end
+		-- local function tsserver_on_publish_diagnostics_override(_, result, ctx, config)
+		-- 	local filtered_diagnostics = {}
+		--
+		-- 	for _, diagnostic in ipairs(result.diagnostics) do
+		-- 		local found = false
+		-- 		for _, message in ipairs(messages_to_filter) do
+		-- 			if diagnostic.message == message then
+		-- 				found = true
+		-- 				break
+		-- 			end
+		-- 		end
+		-- 		if not found then
+		-- 			table.insert(filtered_diagnostics, diagnostic)
+		-- 		end
+		-- 	end
+		--
+		-- 	result.diagnostics = filtered_diagnostics
+		--
+		-- 	vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
+		-- end
 
 		-- LSP servers to install (see list here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers )
 		local servers = {
@@ -94,16 +94,17 @@ return {
 			rust_analyzer = {},
 			-- tailwindcss = {},
 			terraformls = {},
-			tsserver = {
-				settings = {
-					experimental = {
-						enableProjectDiagnostics = true,
-					},
-				},
-				handlers = {
-					["textDocument/publishDiagnostics"] = vim.lsp.with(tsserver_on_publish_diagnostics_override, {}),
-				},
-			},
+			-- tsserver = {
+			-- 	settings = {
+			-- 		experimental = {
+			-- 			enableProjectDiagnostics = true,
+			-- 		},
+			-- 	},
+			-- 	handlers = {
+			-- 		["textDocument/publishDiagnostics"] = vim.lsp.with(tsserver_on_publish_diagnostics_override, {}),
+			-- 	},
+			-- },
+			ts_ls = {},
 			yamlls = {},
 		}
 
