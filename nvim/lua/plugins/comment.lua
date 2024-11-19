@@ -4,7 +4,6 @@ return {
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		config = function()
-			---@diagnostic disable-next-line: missing-fields
 			require("ts_context_commentstring").setup({
 				enable_autocmd = false,
 			})
@@ -12,7 +11,6 @@ return {
 	},
 	config = function()
 		-- Comment configuration object _can_ take a partial and is merged in
-		---@diagnostic disable-next-line: missing-fields
 		require("Comment").setup({
 			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 		})

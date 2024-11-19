@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 M = {}
 
 local opts = { noremap = true, silent = true }

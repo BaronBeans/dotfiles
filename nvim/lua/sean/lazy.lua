@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- Lazy install bootstrap snippet
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
