@@ -1,0 +1,43 @@
+sudo pacman -Syu
+sudo pacman -S openssh
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub
+
+git clone git@github.com:BaronBeans/dotfiles.git
+cd dotfiles
+cp /bash/bashrc ~/.bashrc
+cp /bash/bash_aliases ~/.bash_aliases
+
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo chown /usr/local
+-> https://go.dev/dl/
+tar -C /usr/local -xzf go{VERSION_HERE}.linux-amd64.tar.gz
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install 23
+curl -fsSL https://bun.sh/install | bash
+
+sudo pacman -S unzip
+cargo install stylua
+
+git clone git@github.com:BaronBeans/display.git
+cd display
+make install
+
+sudo pacman -S zellij
+cp ~/code/dotfiles/zellij/config.kdl ~/.config/zellij/config.kdl
+
+sudo pacman -S lazygit
+
+git clone git@github.com:neovim/neovim.git
+cd neovim
+sudo pacman -S cmake
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+ln -s ~/code/dotfiles/nvim ~/.config/nvim
+
+git config --global user.name "BaronBeans"
+git config --global user.email "sean.barnard.94@hotmail.com"
+
+-> https://sourceforge.net/projects/vcxsrv/
+start xserver
